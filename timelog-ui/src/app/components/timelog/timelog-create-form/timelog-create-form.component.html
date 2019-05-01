@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Create time log</h1>
+<form class="" mat-dialog-content [formGroup]="timeLogForm">
+  <mat-form-field class="input-full-width">
+    <input matInput [matDatepicker]="timelogDate" placeholder="Date" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="timelogDate"></mat-datepicker-toggle>
+    <mat-datepicker #timelogDate></mat-datepicker>
+    <mat-error *ngIf="dateFormControl.hasError('required')">
+      You need a date to when time is logged.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input matInput placeholder="Duration" value="" formControlName="duration">
+    <mat-hint align="end">Format is "XXhXXm"</mat-hint>
+    <mat-error *ngIf="durationFromControl.hasError('required')">
+      You need a duration to log time.
+    </mat-error>
+    <mat-error *ngIf="durationFromControl.hasError('invalidFormat')">
+      Format is incorrect. Expected format is something like "1h25m" or "30m"
+    </mat-error>
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button (click)="create()" cdkFocusInitial color="primary">Create</button>
+</div>

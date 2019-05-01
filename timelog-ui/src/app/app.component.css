@@ -1,0 +1,8 @@
+app-toolbar {
+    flex:0;
+}
+
+mat-sidenav-container {
+    flex: 1;
+}
+

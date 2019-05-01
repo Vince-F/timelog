@@ -1,0 +1,36 @@
+.task-list {
+    display: flex;
+    padding: 24px;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.list-header {
+    flex:0;
+}
+
+.list-container {
+    flex:1;
+    max-height: 100%;
+    overflow: auto;
+    margin-bottom: 16px;
+}
+
+.bottom-actions {
+    flex: 0;
+    text-align: right;
+}
+
+.task-entry h4 {
+    flex: 1;
+}
+
+.task-entry .task-actions {
+    flex:0;
+    display: flex;
+}
+
+.task-entry .task-actions button {
+    flex:1;
+}

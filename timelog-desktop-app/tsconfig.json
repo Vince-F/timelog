@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false,
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "alwaysStrict": true,
+    "outDir": "lib/"
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings",
+    "typings/browser",
+    "typings/browser.d.ts",
+    "lib",
+    "examples"
+  ]
+}

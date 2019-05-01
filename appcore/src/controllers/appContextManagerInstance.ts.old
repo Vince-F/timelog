@@ -1,0 +1,18 @@
+import { ApplicationDataManager } from "./applicationDataManager";
+import sequelize = require("sequelize");
+
+class ApplicationContextManager {
+    private appDataMgr:ApplicationDataManager;
+    private dbInstance: sequelize.Sequelize;
+
+    constructor() {
+
+    }
+
+    createDatabaseInstance(dbName:string, username:string, password:string, options:any) {
+        this.dbInstance = new sequelize(dbName, username, password, options);
+        this.appDataMgr = new ApplicationDataManager(this.dbInstance);
+    }
+}
+
+export let appContextManagerInstance = new ApplicationContextManager();

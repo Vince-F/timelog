@@ -1,0 +1,17 @@
+<div *ngIf="loading === true">
+  Loading...
+</div>
+<div class="settings-view" *ngIf="loading === false"> 
+  <h1>Settings</h1>
+  <form class="">
+    <div class="input-full-width">
+      <mat-checkbox name="isDoneRequiringTimelog" [(ngModel)]="settings.doneRequiresTimelog">Prevent task with no time log to be put to "Done"</mat-checkbox>
+    </div>
+    <div class="input-full-width">
+      <mat-checkbox name="allowUndone" [(ngModel)]="settings.allowUndone">Allow task to be undone</mat-checkbox>
+    </div>
+  </form>
+  <div>
+    <button mat-raised-button (click)="saveSettings()" color="primary">Save</button>
+  </div>
+</div>

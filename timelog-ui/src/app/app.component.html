@@ -1,0 +1,11 @@
+<app-toolbar></app-toolbar>
+
+<mat-sidenav-container >
+	<mat-sidenav #sidenav mode="side" [opened]="opened">
+		<app-navigation-menu ></app-navigation-menu>	
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

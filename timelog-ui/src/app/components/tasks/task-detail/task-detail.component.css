@@ -1,0 +1,28 @@
+.task-details {
+    padding: 24px;
+}
+
+.detail-view-header {
+    display: flex;
+}
+
+.detail-view-header div {
+    flex: 1;
+}
+
+.detail-view-header .actions {
+    text-align: right;
+}
+
+.timelog-entry .timelog-content {
+    flex: 1;
+}
+
+.timelog-entry .timelog-actions {
+    flex:0;
+    display: flex;
+}
+
+.task-entry .timelog-actions button {
+    flex:1;
+}

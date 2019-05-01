@@ -1,0 +1,24 @@
+{
+  "name": "timelog-appcore-data-persistence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "Vincent Francolin",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@types/sequelize": "^4.27.33",
+    "@types/uuid": "^3.4.4",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "sequelize": "^4.42.0",
+    "sqlite3": "^4.0.6",
+    "timelog-appcore": "file:../appcore",
+    "uuid": "^3.3.2"
+  }
+}
