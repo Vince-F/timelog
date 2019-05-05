@@ -17,6 +17,11 @@ function initApp() {
 }
 window.initApp = initApp;
 
+if(environment.isTestEnvironment) {
+  environment.initTestEnvironment();
+  initApp();
+}
+
 console.log("desktop", window.isDesktopApp);
 /*if(!window.isDesktopApp) { //electron app is responsible to init the app
   initApp();
@@ -32,7 +37,7 @@ console.log("desktop", window.isDesktopApp);
 
 declare global {
   interface Window {
-    appDataManagerInstance: ApplicationDataManager;
+    appDataManagerInstance: any; /* ApplicationDataManager; keep any while I find a fix for the ES5/ES6 conflict between the two pckages */
     isDesktopApp:boolean;
     initApp:any;
     ipcRenderer:any;

@@ -1,5 +1,7 @@
 export const environment = {
     production: false,
-    mobileApp:true
+    mobileApp:true,
+    isTestEnvironment: false,
+    initTestEnvironment: () => {}
   };
   
