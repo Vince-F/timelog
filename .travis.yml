@@ -1,0 +1,9 @@
+language: node_js
+
+jobs:
+  include:
+    - stage: install
+      script cd ./appcore && npm install && npm run build
+    - script cd ../appcore-data-persistence && npm install && npm run build
+    - script cd ../timelog-ui && npm install && npm run build
+    - script cd ../timelog-desktop-app && npm install && npm run dist
