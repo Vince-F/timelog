@@ -21,12 +21,16 @@
     </mat-card-actions>
   </mat-card>
 </div>
-<div class="task-details" *ngIf="loading === false && errors.length === 0">
-  <div class="detail-view-header">
-    <div>
+<div class="task-details content-view" *ngIf="loading === false && errors.length === 0">
+  <div class="detail-view-header content-view-title mat-elevation-z2">
+    <div class="actions-left">
       <button mat-button (click)="goToTaskList()">
         <mat-icon>arrow_back</mat-icon>
       </button>
+    </div>
+    <div class="title-area">
+
+      <h1>Task {{task.name}}</h1>
     </div>
     <div class="actions">
       <!-- <button mat-button (click)="deleteTask()">
@@ -34,33 +38,35 @@
       </button> -->
     </div>
   </div>
-  <h1>
-    {{task.name}}
-  </h1>
-  <p>
-    Status: {{done?'Done':'Pending'}}
-  </p>
-  <p>
-    Total time spent: {{totalSpentTime}}
-  </p>
+  <div class="content-view-body">
+    <h2>
+      {{task.name}}
+    </h2>
+    <p>
+      Status: {{done?'Done':'Pending'}}
+    </p>
+    <p>
+      Total time spent: {{totalSpentTime}}
+    </p>
 
-  <div class="">
-    <h3>Activity</h3>
-    <mat-list class="timelog-entry">
-      <ng-container *ngFor="let timelog of timeLogs">
-        <mat-list-item class="timelog-entry">
-          <span mat-line class="timelog-content">
-            <strong>{{getTimelogFormattedDuration(timelog)}}</strong> <small> on {{getTimelogFormattedDate(timelog)}}
-            </small>
-          </span>
-          <p class="timelog-actions">
-            <button mat-icon-button (click)="deleteTimeLog(timelog)">
-              <mat-icon aria-label="Delete time log">delete</mat-icon>
-            </button>
-          </p>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </ng-container>
-    </mat-list>
+    <div class="">
+      <h3>Activity</h3>
+      <mat-list class="timelog-entry">
+        <ng-container *ngFor="let timelog of timeLogs">
+          <mat-list-item class="timelog-entry">
+            <span mat-line class="timelog-content">
+              <strong>{{getTimelogFormattedDuration(timelog)}}</strong> <small> on {{getTimelogFormattedDate(timelog)}}
+              </small>
+            </span>
+            <p class="timelog-actions">
+              <button mat-icon-button (click)="deleteTimeLog(timelog)">
+                <mat-icon aria-label="Delete time log">delete</mat-icon>
+              </button>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </mat-list>
+    </div>
   </div>
 </div>
