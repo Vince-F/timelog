@@ -9,7 +9,7 @@
 <div class="task-list" *ngIf="isLoading === false && errors.length === 0">
     <div class="list-header">
         <h1>My tasks</h1>
-        <mat-chip-list>
+        <mat-chip-list (mousedown)="preventChipFocus($event)">
             <mat-chip (click)="setListSelection('Pending')" class="chip-with-badge" [selected]="listSelection === 'Pending'" color="primary" matBadge="{{filteredLists.get('Pending').length}}">Pending</mat-chip>
             <mat-chip (click)="setListSelection('Done')" class="chip-with-badge" [selected]="listSelection === 'Done'" color="primary" matBadge="{{filteredLists.get('Done').length}}">Done</mat-chip>
             <mat-chip (click)="setListSelection('All')" class="chip-with-badge" [selected]="listSelection === 'All'" color="primary" matBadge="{{filteredLists.get('All').length}}">All</mat-chip>
