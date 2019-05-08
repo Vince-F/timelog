@@ -73,11 +73,12 @@ export class TimelogCreateFormComponent implements OnInit {
 
   durationFormatValidator(): ValidatorFn {
     return function (control) {
-      let formatRegexp = /(\d{1,2}h)(\d{1,2}m)/;
+      let formatRegexp = /(\d{1,2}h)?(\d{1,2}m)?/;
       let value = control.value.toString().replace(/ /g, "");
       let result = formatRegexp.exec(value);
       
-      return result === null ? { 'invalidFormat': { value: control.value } } : null;
+      return result === null || result[0] .length === 0 || result[0] !== result.input ? 
+                { 'invalidFormat': { value: control.value } } : null;
     }
   }
 
