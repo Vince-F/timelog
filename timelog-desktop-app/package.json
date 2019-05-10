@@ -1,6 +1,6 @@
 {
   "name": "timelog-desktop-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The desktop version for the TimeLog app",
   "main": "lib/index.js",
   "scripts": {
