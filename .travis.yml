@@ -5,7 +5,5 @@ jobs:
   include:
     - stage: install-yarn
       script: npm install -g yarn
-    - stage: install
-      script: npm run init-all
-    - stage: test-build
-      script: npm run test-build-desktop
+    - stage: test-build-desktop-app
+      script: npm run init-all && npm run test-build-desktop
