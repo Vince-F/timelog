@@ -3,6 +3,8 @@ node_js:
   - "10"
 jobs:
   include:
+    - stage: install-yarn
+      script: npm install -g yarn
     - stage: install
       script: npm run init-all
     - stage: test-build
