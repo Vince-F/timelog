@@ -1,9 +1,27 @@
+dist: trusty
+sudo: required
+
 language: node_js
 node_js:
   - "10"
+
+addons:
+  firefox: latest
+  apt:
+    sources:
+     - google-chrome
+    packages:
+     - google-chrome-stable fluxbox
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+  - fluxbox >/dev/null 2>&1 &
+
 jobs:
   include:
     - stage: install-yarn
       script: npm install -g yarn
     - stage: test-build-desktop-app
-      script: npm run init-all && npm run test-build-desktop
+      script: npm run init-all && npm run test-build-desktop && npm run launch-integration-tests
