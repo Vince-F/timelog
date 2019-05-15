@@ -24,4 +24,4 @@ jobs:
     - stage: install-yarn
       script: npm install -g yarn
     - stage: test-build-desktop-app
-      script: npm run init-all && npm run test-build-desktop
+      script: npm run init-all && npm run test-build-desktop && npm run launch-integration-tests
