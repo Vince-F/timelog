@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Create time log</h1>
-<form class="" mat-dialog-content [formGroup]="timeLogForm">
-  <mat-form-field class="input-full-width">
+<form class="" mat-dialog-content [formGroup]="timeLogForm" data-section="timelog-modal">
+  <mat-form-field data-section="timelog-date-input" class="input-full-width">
     <input matInput [matDatepicker]="timelogDate" placeholder="Date" formControlName="date">
     <mat-datepicker-toggle matSuffix [for]="timelogDate"></mat-datepicker-toggle>
     <mat-datepicker #timelogDate></mat-datepicker>
@@ -8,7 +8,7 @@
       You need a date to when time is logged.
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="input-full-width">
+  <mat-form-field data-section="timelog-duration-input" class="input-full-width">
     <input matInput placeholder="Duration" value="" formControlName="duration">
     <mat-hint align="end">Format is "XXhXXm"</mat-hint>
     <mat-error *ngIf="durationFromControl.hasError('required')">
@@ -21,5 +21,5 @@
 </form>
 <div mat-dialog-actions>
   <button mat-raised-button (click)="cancel()">Cancel</button>
-  <button mat-raised-button (click)="create()" cdkFocusInitial color="primary">Create</button>
+  <button data-section="create-button" mat-raised-button (click)="create()" cdkFocusInitial color="primary">Create</button>
 </div>

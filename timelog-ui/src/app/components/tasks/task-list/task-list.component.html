@@ -21,10 +21,10 @@
                 <mat-list-item class="task-entry">
                     <h4 mat-line>{{task.name}}</h4>
                     <p class="task-actions">
-                        <button mat-icon-button (click)="addTimeLog(task)">
+                        <button data-section="add-timelog-button" mat-icon-button (click)="addTimeLog(task)">
                             <mat-icon aria-label="Log time to task">add_alarm</mat-icon>
                         </button>
-                        <button mat-icon-button (click)="displayTaskDetails(task)">
+                        <button data-section="detail-button" mat-icon-button (click)="displayTaskDetails(task)">
                             <mat-icon aria-label="View task detail">info</mat-icon>
                         </button>
                         <button data-section="done-button" *ngIf="!task.done" mat-icon-button (click)="markTaskDone(task)">
