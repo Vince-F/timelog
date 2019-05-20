@@ -22,7 +22,7 @@ export class SettingsViewComponent implements OnInit {
   ngOnInit() {
     this.settingsManager.loadSettings()
       .then((settings) => {
-        this.settings = settings;
+        this.settings = {...settings};
         this.loading = false;
       }).catch((error) => {
         this.loading = false;

@@ -14,8 +14,8 @@
     <mat-error *ngIf="durationFromControl.hasError('required')">
       You need a duration to log time.
     </mat-error>
-    <mat-error *ngIf="durationFromControl.hasError('invalidFormat')">
-      Format is incorrect. Expected format is something like "1h25m" or "30m"
+    <mat-error *ngIf="durationFromControl.hasError('invalidFormat') && !durationFromControl.hasError('required')">
+      Incorrect format. Expected "XXhXXm", "XXh" or "XXm".
     </mat-error>
   </mat-form-field>
 </form>

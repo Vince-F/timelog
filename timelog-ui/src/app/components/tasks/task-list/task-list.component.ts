@@ -151,6 +151,10 @@ export class TaskListComponent implements OnInit {
       });
   }
 
+  preventChipFocus(event: Event) {
+    event.preventDefault();
+  }
+
   setListSelection(listSelection: string) {
     this.listSelection = listSelection;
   }
