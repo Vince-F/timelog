@@ -1,0 +1,26 @@
+{
+  "name": "timelog",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-appcore": "cd ./appcore && yarn install && npm run build && cd ..",
+    "init-appcore-data-persistence": "cd ./appcore-data-persistence && yarn install && npm run build && cd ..",
+    "init-ui": "cd ./timelog-ui && yarn install && ng build && cd ..",
+    "init-desktop-app": "cd ./timelog-desktop-app && yarn install && npm run build && cd ..",
+    "init-all": "npm run init-appcore && npm run init-appcore-data-persistence && npm run init-ui && npm run init-desktop-app",
+    "test-build-desktop" : "cd ./timelog-desktop-app && npm run pack",
+    "launch-integration-tests": "cd ./timelog-ui && npm run run-tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vince-F/timelog.git"
+  },
+  "author": "Vincent Francolin",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Vince-F/timelog/issues"
+  },
+  "homepage": "https://github.com/Vince-F/timelog#readme"
+}

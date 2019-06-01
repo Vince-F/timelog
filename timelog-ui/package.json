@@ -1,6 +1,6 @@
 {
   "name": "timelog-ui",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,6 +12,7 @@
     "build-test": "ng build -c test",
     "serve-test": "ng serve -c test",
     "integration-tests": "testcafe chrome integrationTests/*.ts",
+    "integration-tests-with-server": "testcafe chrome integrationTests/*.ts  --app \"npm run serve-test\"",
     "run-tests": "node testLauncher.js"
   },
   "private": true,
