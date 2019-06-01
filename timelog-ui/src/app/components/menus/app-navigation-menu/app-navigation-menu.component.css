@@ -10,3 +10,7 @@
     color: #3f51b5;
     background: rgba(0,0,0,.03);
 }
+
+.mat-divider {
+    margin: 8px 0;
+}
