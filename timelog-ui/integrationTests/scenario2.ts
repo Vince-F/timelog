@@ -136,7 +136,7 @@ test('Clicking on detail button should go to detail view', async t => {
 
     let taskTitle = Selector(".task-details h1");
     await t.expect(taskTitle.exists).ok;
-    await t.expect(taskTitle.innerText).eql("test");
+    await t.expect(taskTitle.innerText).eql("Task test");
 
     let taskStatus = Selector(".task-details [data-section='status']");
     await t.expect(taskStatus.exists).ok;
