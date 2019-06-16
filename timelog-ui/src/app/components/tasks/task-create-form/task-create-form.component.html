@@ -6,6 +6,10 @@
       Your task name must not be empty.
     </mat-error>
   </mat-form-field>
+  <mat-form-field class="input-full-width" data-section="task-description-input">
+    <textarea matInput placeholder="Task description" name="description" formControlName="description">
+    </textarea>
+  </mat-form-field>
 </form>
 <div mat-dialog-actions>
   <button mat-raised-button (click)="cancel()" data-section="cancel-button">Cancel</button>
