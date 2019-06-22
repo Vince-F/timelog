@@ -1,0 +1,14 @@
+.error-placeholder {
+    width: 400px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.error-placeholder .mat-icon {
+    height: 48px;
+    width: 48px;
+}
+
+.error-placeholder .material-icons {
+    font-size: 48px;
+}

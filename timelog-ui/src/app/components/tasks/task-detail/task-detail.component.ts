@@ -25,7 +25,7 @@ export class TaskDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private snackbar: MatSnackBar,
     private router: Router) {
-    this.errors = [];
+    this.errors = ["test error"];
     this.loading = true;
   }
 
