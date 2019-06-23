@@ -20,6 +20,7 @@ import { ReportsFilterViewComponent } from './components/reports/reports-filter-
 import { ReportsContentViewComponent } from './components/reports/reports-content-view/reports-content-view.component';
 import { SettingsViewComponent } from './components/settings/settings-view/settings-view.component';
 import { SettingsManager } from './services/dataManager/settingsManager';
+import { ErrorViewComponent } from './components/layout/error-view/error-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SettingsManager } from './services/dataManager/settingsManager';
     ReportsViewComponent,
     ReportsFilterViewComponent,
     ReportsContentViewComponent,
-    SettingsViewComponent
+    SettingsViewComponent,
+    ErrorViewComponent
   ],
   imports: [
     AppRoutingModule,
