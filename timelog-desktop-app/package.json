@@ -1,6 +1,6 @@
 {
   "name": "timelog-desktop-app",
-  "version": "1.0.1",
+  "version": "1.1.0-beta.1",
   "description": "The desktop version for the TimeLog app",
   "main": "lib/index.js",
   "scripts": {
@@ -20,10 +20,10 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "@types/sequelize": "^4.27.47",
+    "electron": "^3.0.10",
     "electron-builder": "^20.39.0",
     "electron-rebuild": "^1.8.4",
-    "typescript": "^3.2.1",
-    "electron": "^3.0.10"
+    "typescript": "^3.2.1"
   },
   "dependencies": {
     "sequelize": "^4.43.1",
