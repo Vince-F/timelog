@@ -11,12 +11,15 @@ import { TaskDataManager } from 'src/app/services/dataManager/taskDataManager';
 export class TaskCreateFormComponent implements OnInit {
   taskForm: FormGroup;
   nameFormControl: FormControl;
+  descriptionFormControl: FormControl;
 
   constructor(private dialogRef: MatDialogRef<TaskCreateFormComponent>,
     private taskDtMgr: TaskDataManager) {
-    this.nameFormControl = new FormControl('', [Validators.required])
+    this.nameFormControl = new FormControl('', [Validators.required]);
+    this.descriptionFormControl = new FormControl('', []);
     this.taskForm = new FormGroup({
-      name: this.nameFormControl
+      name: this.nameFormControl,
+      description: this.descriptionFormControl
     });
   }
 

@@ -1,7 +1,6 @@
 import { app, BrowserWindow } from 'electron';
-import {createDatabaseInstanceOptions} from "./appDataPersistence";
-import {ApplicationDataManager, DataPersistenceController} from "timelog-appcore-data-persistence";
-import { any } from 'bluebird';
+import { createDatabaseInstanceOptions } from "./appDataPersistence";
+import { ApplicationDataManager, DataPersistenceController, MigrationHelper } from "timelog-appcore-data-persistence";
 
 class MainWindow {
     private instance: BrowserWindow;
@@ -13,7 +12,7 @@ class MainWindow {
     createMainWindow(dataAppMgr: ApplicationDataManager) {
         global.dataAppManager = dataAppMgr;
         this.instance = new BrowserWindow({ width: 800, height: 600 });
-        
+
         //this.injectAppContextManager(dataAppMgr);
         this.instance.loadFile(require.resolve("timelog-ui/dist/timelog-ui/index.html"));
         this.instance.webContents.executeJavaScript(`window.isDesktopApp = true;
@@ -26,7 +25,7 @@ class MainWindow {
         this.instance.on('closed', () => {
             this.instance = null;
         });
-        
+
     }
 
     getWindow() {
@@ -45,7 +44,7 @@ class MainWindow {
             initApp();
         });
         `, false, () => { this.instance.loadFile(require.resolve("timelog-ui/dist/timelog-ui/index.html")); });
-        this.instance.webContents.send("app-context-manager",dataAppMgr);
+        this.instance.webContents.send("app-context-manager", dataAppMgr);
     }
 }
 
@@ -56,12 +55,19 @@ app.on('ready', () => {
     let userDataFilename = appDataPath + "/userdata.sqlite";
     let dbInstanceOptions = createDatabaseInstanceOptions(userDataFilename);
     let dataPersistenceCtrl = new DataPersistenceController(userDataFilename);
+    let migrationManager = new MigrationHelper(dataPersistenceCtrl);
     dataPersistenceCtrl.connect()
         .then(() => {
             let dataAppMgr = new ApplicationDataManager(dataPersistenceCtrl.dbInstance);
             dataAppMgr.createTables()
                 .then(() => {
-                    mainWindow.createMainWindow(dataAppMgr);
+                    migrationManager.runMigration()
+                        .then(() => {
+                            console.log("Migrations completed");
+                            mainWindow.createMainWindow(dataAppMgr);
+                        }).catch(() => {
+                            throw "Fail to migrate data";
+                        });
                 }).catch(() => {
                     throw "Fail to intialise the data";
                 });
@@ -71,7 +77,7 @@ app.on('ready', () => {
             throw "Fatal error with DB";
         })
     //appContextManagerInstance.createDatabaseInstance("app", "", "", dbInstanceOptions);
-    
+
 });
 
 app.on('window-all-closed', function () {

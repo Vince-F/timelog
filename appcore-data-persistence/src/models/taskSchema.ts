@@ -13,6 +13,9 @@ export class TaskSchema {
             },
             done: {
                 type: sequelize.BOOLEAN
+            },
+            description: {
+                type: sequelize.TEXT
             }
         });
     }
