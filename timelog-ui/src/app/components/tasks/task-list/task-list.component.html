@@ -12,10 +12,10 @@
     </div>
     <div class="task-list content-view-body" >
         <div class="list-header">
-            <mat-chip-list>
-                <mat-chip data-section="pending-chip" (click)="setListSelection('Pending')" class="chip-with-badge" [selected]="listSelection === 'Pending'" color="primary" matBadge="{{filteredLists.get('Pending').length}}">Pending</mat-chip>
-                <mat-chip data-section="done-chip" (click)="setListSelection('Done')" class="chip-with-badge" [selected]="listSelection === 'Done'" color="primary" matBadge="{{filteredLists.get('Done').length}}">Done</mat-chip>
-                <mat-chip data-section="all-chip" (click)="setListSelection('All')" class="chip-with-badge" [selected]="listSelection === 'All'" color="primary" matBadge="{{filteredLists.get('All').length}}">All</mat-chip>
+            <mat-chip-list (mousedown)="preventChipFocus($event)">
+                <mat-chip data-section="pending-chip" (click)="setListSelection('Pending')" class="chip-with-badge" [selected]="listSelection === 'Pending'" color="primary" matBadge="{{filteredLists.get('Pending').length}}" matBadgeColor="accent">Pending</mat-chip>
+                <mat-chip data-section="done-chip" (click)="setListSelection('Done')" class="chip-with-badge" [selected]="listSelection === 'Done'" color="primary" matBadge="{{filteredLists.get('Done').length}}" matBadgeColor="accent">Done</mat-chip>
+                <mat-chip data-section="all-chip" (click)="setListSelection('All')" class="chip-with-badge" [selected]="listSelection === 'All'" color="primary" matBadge="{{filteredLists.get('All').length}}" matBadgeColor="accent">All</mat-chip>
             </mat-chip-list>
         </div>
         <div class="list-container">
