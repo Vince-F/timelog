@@ -11,7 +11,7 @@ class MainWindow {
 
     createMainWindow(dataAppMgr: ApplicationDataManager) {
         global.dataAppManager = dataAppMgr;
-        this.instance = new BrowserWindow({ width: 800, height: 600 });
+        this.instance = new BrowserWindow({ width: 800, height: 600, webPreferences: {nodeIntegration: true} });
 
         //this.injectAppContextManager(dataAppMgr);
         this.instance.loadFile(require.resolve("timelog-ui/dist/timelog-ui/index.html"));

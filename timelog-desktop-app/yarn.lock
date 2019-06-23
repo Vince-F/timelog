@@ -113,10 +113,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
   integrity sha512-Jrb/x3HT4PTJp6a4avhmJCDEVrPdqLfl3e8GGMbpkGGdwAV5UGlIs4vVEfsHHfylZVOKZWpOqmqFH8CbfOZ6kg==
 
-"@types/node@^8.0.24":
-  version "8.10.48"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.48.tgz#e385073561643a9ba6199a1985ffc03530f90781"
-  integrity sha512-c35YEBTkL4rzXY2ucpSKy+UYHjUBIIkuJbWYbsGIrKLEWU5dgJMmLkkIb3qeC3O3Tpb1ZQCwecscvJTDjDjkRw==
+"@types/node@^10.12.18":
+  version "10.14.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.10.tgz#e491484c6060af8d461e12ec81c0da8a3282b8de"
+  integrity sha512-V8wj+w2YMNvGuhgl/MA5fmTxgjmVHVoasfIaxMMZJV6Y8Kk+Ydpi1z2whoShDCJ2BuNVoqH/h1hrygnBxkrw/Q==
 
 "@types/sequelize@^4.27.47":
   version "4.27.49"
@@ -861,12 +861,12 @@ electron-rebuild@^1.8.4:
     spawn-rx "^3.0.0"
     yargs "^12.0.5"
 
-electron@^3.0.10:
-  version "3.1.9"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-3.1.9.tgz#036bfec3b0b57d60dca250caa0fb2390b8a06092"
-  integrity sha512-F9AoMjY9zuQBdxmjZz644wHnJehNlYD+WQK2kBMXKoRKrzkYgD5k6QU6mqZuT5OGARpYp9zFOJ8uuJVcAB+TbQ==
+electron@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-5.0.5.tgz#2d04499064d3f6c89c4642e47cfe9ea151d794eb"
+  integrity sha512-GzVQhImBX3rSCFPyJ1u1KbxquoidAHzGeCH2FTs3lzAh1H8m4vd7xh6CNC111mT/I8pxFk5D8s3atJlJQLPAeg==
   dependencies:
-    "@types/node" "^8.0.24"
+    "@types/node" "^10.12.18"
     electron-download "^4.1.0"
     extract-zip "^1.0.3"
 
@@ -2686,20 +2686,20 @@ timed-out@^4.0.0:
   integrity sha1-8y6srFoXW+ol1/q1Zas+2HQe9W8=
 
 "timelog-appcore-data-persistence@file:../appcore-data-persistence":
-  version "1.0.1"
+  version "1.1.0-beta.1"
   dependencies:
     sequelize "^4.42.0"
     sequelize-cli "^5.4.0"
     sqlite3 "^4.0.6"
-    timelog-appcore "file:../../../../AppData/Local/Yarn/Cache/v4/npm-timelog-appcore-data-persistence-1.0.1-a6e841ae-79b5-49df-9af0-e529e9165bdf-1560683959649/node_modules/appcore"
+    timelog-appcore "file:../../../../AppData/Local/Yarn/Cache/v4/npm-timelog-appcore-data-persistence-1.1.0-beta.1-fd0aeb99-005f-4b14-ad0c-8d98401ccedb-1561318855083/node_modules/appcore"
     umzug "^2.2.0"
     uuid "^3.3.2"
 
 "timelog-appcore@file:../appcore":
-  version "1.0.1"
+  version "1.1.0-beta.1"
 
-"timelog-ui@file:../timelog-ui":
-  version "1.0.1"
+timelog-ui@../timelog-ui:
+  version "1.1.0-beta.1"
   dependencies:
     "@angular/animations" "^6.1.10"
     "@angular/cdk" "^7.0.3"
@@ -2715,7 +2715,7 @@ timed-out@^4.0.0:
     core-js "^2.5.4"
     hammerjs "^2.0.8"
     rxjs "^6.0.0"
-    timelog-appcore "file:../../../../AppData/Local/Yarn/Cache/v4/npm-timelog-ui-1.0.1-8929e2d6-8a8c-47d0-a5fd-6b6de32c23e9-1560683960963/node_modules/appcore"
+    timelog-appcore "file:../../../../AppData/Local/Yarn/Cache/v4/npm-timelog-ui-1.1.0-beta.1-ddf09f5f-00bc-4062-9027-667fefffe7dc-1561318855204/node_modules/appcore"
     zone.js "^0.8.26"
 
 timers-ext@^0.1.5:
