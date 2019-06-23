@@ -1,0 +1,39 @@
+.content-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-view-title {
+    flex: 0;
+    display: flex;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.content-view-title h1,
+.content-view-title .title-area {
+    flex: 1;
+}
+
+.content-view-title h1 {
+    margin: 0;
+    font-size: 24px;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.content-view-title .actions-left {
+    flex: 0;
+    text-align: left;
+}
+
+.content-view-title .actions {
+    flex: 0;
+    text-align: right;
+}
+
+.content-view-body {
+    padding: 24px;
+    flex: 1;
+}

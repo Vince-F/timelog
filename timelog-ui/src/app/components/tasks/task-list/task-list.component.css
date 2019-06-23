@@ -1,6 +1,5 @@
 .task-list {
     display: flex;
-    padding: 24px;
     height: 100%;
     box-sizing: border-box;
     flex-direction: column;
