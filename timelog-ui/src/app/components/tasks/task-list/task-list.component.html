@@ -6,42 +6,46 @@
 <div *ngIf="isLoading === true">
     Loading...
 </div>
-<div class="task-list" *ngIf="isLoading === false && errors.length === 0">
-    <div class="list-header">
-      <h1>My tasks</h1>
-        <mat-chip-list  (mousedown)="preventChipFocus($event)">
-            <mat-chip data-section="pending-chip" (click)="setListSelection('Pending')" class="chip-with-badge" [selected]="listSelection === 'Pending'" color="primary" matBadge="{{filteredLists.get('Pending').length}}">Pending</mat-chip>
-            <mat-chip data-section="done-chip" (click)="setListSelection('Done')" class="chip-with-badge" [selected]="listSelection === 'Done'" color="primary" matBadge="{{filteredLists.get('Done').length}}">Done</mat-chip>
-            <mat-chip data-section="all-chip" (click)="setListSelection('All')" class="chip-with-badge" [selected]="listSelection === 'All'" color="primary" matBadge="{{filteredLists.get('All').length}}">All</mat-chip>
-        </mat-chip-list>
+<div class="content-view" *ngIf="isLoading === false && errors.length === 0">
+    <div class="content-view-title mat-elevation-z2">
+        <h1>My tasks</h1>
     </div>
-    <div class="list-container">
-        <mat-list>
-            <ng-container *ngFor="let task of filteredLists.get(listSelection)">
-                <mat-list-item class="task-entry">
-                    <h4 mat-line>{{task.name}}</h4>
-                    <p class="task-actions">
-                        <button data-section="add-timelog-button" mat-icon-button (click)="addTimeLog(task)">
-                            <mat-icon aria-label="Log time to task">add_alarm</mat-icon>
-                        </button>
-                        <button data-section="detail-button" mat-icon-button (click)="displayTaskDetails(task)">
-                            <mat-icon aria-label="View task detail">info</mat-icon>
-                        </button>
-                        <button data-section="done-button" *ngIf="!task.done" mat-icon-button (click)="markTaskDone(task)">
-                            <mat-icon aria-label="Mark task done">check_circle</mat-icon>
-                        </button>
-                        <button *ngIf="task.done && taskCanBeUndone|async" mat-icon-button (click)="markTaskUndone(task)">
-                            <mat-icon aria-label="Mark task undone">highlight_off</mat-icon>
-                        </button>
-                    </p>
-                </mat-list-item>
-                <mat-divider></mat-divider>
-            </ng-container>
-        </mat-list>
-    </div>
-    <div class="bottom-actions">
-        <button mat-mini-fab color="primary" (click)="addTask()">
-            <mat-icon aria-label="Add a task action button">add</mat-icon>
-        </button>
+    <div class="task-list content-view-body" >
+        <div class="list-header">
+            <mat-chip-list>
+                <mat-chip data-section="pending-chip" (click)="setListSelection('Pending')" class="chip-with-badge" [selected]="listSelection === 'Pending'" color="primary" matBadge="{{filteredLists.get('Pending').length}}">Pending</mat-chip>
+                <mat-chip data-section="done-chip" (click)="setListSelection('Done')" class="chip-with-badge" [selected]="listSelection === 'Done'" color="primary" matBadge="{{filteredLists.get('Done').length}}">Done</mat-chip>
+                <mat-chip data-section="all-chip" (click)="setListSelection('All')" class="chip-with-badge" [selected]="listSelection === 'All'" color="primary" matBadge="{{filteredLists.get('All').length}}">All</mat-chip>
+            </mat-chip-list>
+        </div>
+        <div class="list-container">
+            <mat-list>
+                <ng-container *ngFor="let task of filteredLists.get(listSelection)">
+                    <mat-list-item class="task-entry">
+                        <h4 mat-line>{{task.name}}</h4>
+                        <p class="task-actions">
+                            <button data-section="add-timelog-button" mat-icon-button (click)="addTimeLog(task)">
+                                <mat-icon aria-label="Log time to task">add_alarm</mat-icon>
+                            </button>
+                            <button data-section="detail-button" mat-icon-button (click)="displayTaskDetails(task)">
+                                <mat-icon aria-label="View task detail">info</mat-icon>
+                            </button>
+                            <button data-section="done-button" *ngIf="!task.done" mat-icon-button (click)="markTaskDone(task)">
+                                <mat-icon aria-label="Mark task done">check_circle</mat-icon>
+                            </button>
+                            <button *ngIf="task.done && taskCanBeUndone|async" mat-icon-button (click)="markTaskUndone(task)">
+                                <mat-icon aria-label="Mark task undone">highlight_off</mat-icon>
+                            </button>
+                        </p>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </ng-container>
+            </mat-list>
+        </div>
+        <div class="bottom-actions">
+            <button mat-mini-fab color="primary" (click)="addTask()">
+                <mat-icon aria-label="Add a task action button">add</mat-icon>
+            </button>
+        </div>
     </div>
 </div>
