@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Settings } from 'timelog-appcore';
 import { SettingsManager } from 'src/app/services/dataManager/settingsManager';
 import { MatSnackBar } from '@angular/material';
+import {I18n} from "@ngx-translate/i18n-polyfill";
 
 @Component({
   selector: 'settings-view',
@@ -15,7 +16,8 @@ export class SettingsViewComponent implements OnInit {
 
 
   constructor(private settingsManager: SettingsManager,
-              private snackbar: MatSnackBar) {
+              private snackbar: MatSnackBar,
+              private i18n:I18n) {
     this.loading = true;
   }
 
@@ -26,18 +28,18 @@ export class SettingsViewComponent implements OnInit {
         this.loading = false;
       }).catch((error) => {
         this.loading = false;
-        this.errors.push("Fail to load settings");
+        this.errors.push(this.i18n("Fail to load settings"));
       });
   }
 
   saveSettings() {
     this.settingsManager.saveSettings(this.settings)
       .then(() => {
-        this.snackbar.open("Settings successfully updated.", "Close", {
+        this.snackbar.open(this.i18n("Settings successfully updated."), this.i18n("Close"), {
           duration: 2000
         });
       }).catch(() => {
-        this.snackbar.open("Fail to update settings.", "Close", {
+        this.snackbar.open(this.i18n("Fail to update settings."), this.i18n("Close"), {
           duration: 5000
         });
       });

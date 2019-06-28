@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar } from '@angular/material';
-import { TaskCreateFormComponent } from '../task-create-form/task-create-form.component';
-import { TaskDataManager } from 'src/app/services/dataManager/taskDataManager';
-import { Task } from 'timelog-appcore/lib/models/task';
-import { Router } from '@angular/router';
-import { TimelogCreateFormComponent } from '../../timelog/timelog-create-form/timelog-create-form.component';
-import { SettingsManager } from '../../../services/dataManager/settingsManager';
-import { TimelogDataManager } from '../../../services/dataManager/timelogDataManager';
+import { Component, OnInit } from "@angular/core";
+import { MatDialog, MatSnackBar } from "@angular/material";
+import { TaskCreateFormComponent } from "../task-create-form/task-create-form.component";
+import { TaskDataManager } from "src/app/services/dataManager/taskDataManager";
+import { Task } from "timelog-appcore/lib/models/task";
+import { Router } from "@angular/router";
+import { TimelogCreateFormComponent } from "../../timelog/timelog-create-form/timelog-create-form.component";
+import { SettingsManager } from "../../../services/dataManager/settingsManager";
+import { TimelogDataManager } from "../../../services/dataManager/timelogDataManager";
 import { from, Observable } from "rxjs";
+import { I18n } from "@ngx-translate/i18n-polyfill";
 
 @Component({
   selector: 'task-list',
-  templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  templateUrl: "./task-list.component.html",
+  styleUrls: ["./task-list.component.css"]
 })
 export class TaskListComponent implements OnInit {
   tasks: Array<Task>;
@@ -27,7 +28,8 @@ export class TaskListComponent implements OnInit {
     private timeLogDtMgr: TimelogDataManager,
     private router: Router,
     private snackbar: MatSnackBar,
-    private settingsManager: SettingsManager) {
+    private settingsManager: SettingsManager,
+    private i18n:I18n) {
     this.listSelection = "Pending";
     this.filteredLists = new Map();
     this.errors = [];
@@ -69,7 +71,7 @@ export class TaskListComponent implements OnInit {
         this.filteredLists.set("Done", this.tasks.filter(task => task.done));
         this.isLoading = false;
       }).catch((error) => {
-        this.errors.push("Fail to load tasks.");
+        this.errors.push(this.i18n("Fail to load tasks."));
         this.isLoading = false;
       });
   }
@@ -78,14 +80,14 @@ export class TaskListComponent implements OnInit {
     selectedTask.done = true;
     this.taskDtMgr.update(selectedTask.id, selectedTask)
       .then(() => {
-        this.snackbar.open("Task updated", "Close", {
+        this.snackbar.open(this.i18n("Task updated"), this.i18n("Close"), {
           duration: 2000
         })
         let idx = this.filteredLists.get("Pending").indexOf(selectedTask);
         this.filteredLists.get("Pending").splice(idx, 1);
         this.filteredLists.get("Done").push(selectedTask);
       }).catch(() => {
-        this.snackbar.open("Fail to update task", "Close", {
+        this.snackbar.open(this.i18n("Fail to update task"), this.i18n("Close"), {
           duration: 5000
         });
       });
@@ -105,12 +107,12 @@ export class TaskListComponent implements OnInit {
               if (nbOfTimelog > 0) {
                 this.updateTaskToDone(selectedTask);
               } else {
-                this.snackbar.open("Your task cannot be put to done because you don't any time logged in it.", "Close", {
+                this.snackbar.open(this.i18n("Your task cannot be put to done because you don't any time logged in it."), this.i18n("Close"), {
                   duration: 5000
                 });
               }
             }).catch(() => {
-              this.snackbar.open("Fail to retrieve time logs for this task.", "Close", {
+              this.snackbar.open(this.i18n("Fail to retrieve time logs for this task."), this.i18n("Close"), {
                 duration: 5000
               });
             });
@@ -128,24 +130,24 @@ export class TaskListComponent implements OnInit {
           selectedTask.done = false;
           this.taskDtMgr.update(selectedTask.id, selectedTask)
             .then(() => {
-              this.snackbar.open("Task updated", "Close", {
+              this.snackbar.open(this.i18n("Task updated"), this.i18n("Close"), {
                 duration: 2000
               })
               let idx = this.filteredLists.get("Done").indexOf(selectedTask);
               this.filteredLists.get("Done").splice(idx, 1);
               this.filteredLists.get("Pending").push(selectedTask);
             }).catch(() => {
-              this.snackbar.open("Fail to update task", "Close", {
+              this.snackbar.open(this.i18n("Fail to update task"), this.i18n("Close"), {
                 duration: 5000
               });
             });
         } else {
-          this.snackbar.open("You cannot put back task to not done.", "Close", {
+          this.snackbar.open(this.i18n("You cannot put back task to not done."), this.i18n("Close"), {
             duration: 5000
           });
         }
       }).catch(() => {
-        this.snackbar.open("Fail to check user settings.", "Close", {
+        this.snackbar.open(this.i18n("Fail to check user settings."), this.i18n("Close"), {
           duration: 5000
         });
       });

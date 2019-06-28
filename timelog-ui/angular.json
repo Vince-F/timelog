@@ -45,6 +45,14 @@
               "vendorChunk": false,
               "buildOptimizer": true
             },
+            "production-fr": {
+              "aot": true,
+              "outputPath": "dist/timelog-ui-fr/",
+              "i18nFile": "src/locale/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error"
+            },
             "mobileAppProd": {
               "fileReplacements": [
                 {
@@ -62,7 +70,7 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "outputPath": "dist/timelog-ui-mobile"
-            }, 
+            },
             "mobileAppDev": {
               "fileReplacements": [
                 {
@@ -98,6 +106,13 @@
               "vendorChunk": true,
               "buildOptimizer": false,
               "outputPath": "dist/timelog-ui-test"
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/timelog-ui-fr",
+              "i18nFile": "src/locale/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr"
             }
           }
         },
@@ -109,7 +124,7 @@
           "configurations": {
             "production": {
               "browserTarget": "timelog-ui:build:production"
-            }, 
+            },
             "mobileAppProd": {
               "browserTarget": "timelog-ui:build:mobileAppProd"
             },
@@ -118,6 +133,9 @@
             },
             "test": {
               "browserTarget": "timelog-ui:build:test"
+            },
+            "fr": {
+              "browserTarget": "timelog-ui:build:fr"
             }
           }
         },
@@ -154,6 +172,21 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "i18nFormat": "xlf",
+              "srcDir": "src/locale",
+              "genDir": "src/locale",
+              "defaultLanguage": "en",
+              "languages": [
+                "en",
+                "fr"
+              ]
+            }
           }
         }
       }

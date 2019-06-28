@@ -9,7 +9,7 @@
     </div>
     <div class="title-area">
 
-      <h1>Task {{task.name}}</h1>
+      <h1><ng-container i18n>Task</ng-container> {{task.name}}</h1>
     </div>
     <div class="actions">
       <!-- <button mat-button (click)="deleteTask()">
@@ -22,24 +22,24 @@
       {{task.name}}
     </h2>
     <p data-section="status">
-      Status: {{done?'Done':'Pending'}}
+      <ng-container i18n>Status:</ng-container> {{done?'Done':'Pending'}}
     </p>
     <p data-section="totalTime">
-      Total time spent: {{totalSpentTime}}
+      <ng-container i18n>Total time spent:</ng-container> {{totalSpentTime}}
     </p>
     <div data-section="description">
-      Description: 
+      <ng-container i18n>Description:</ng-container> 
       <p>{{task.description}}</p>
     </div>
 
     <div class="">
-      <h3>Activity</h3>
+      <h3 i18n>Activity</h3>
       <mat-list class="timelog-entry">
         <ng-container *ngFor="let timelog of timeLogs">
           <mat-list-item class="timelog-entry">
             <span mat-line class="timelog-content">
-              <strong>{{getTimelogFormattedDuration(timelog)}}</strong> <small> on {{getTimelogFormattedDate(timelog)}}
-              </small>
+              <strong>{{getTimelogFormattedDuration(timelog)}}</strong> 
+              <small> <ng-container i18n>on</ng-container> {{getTimelogFormattedDate(timelog)}}</small>
             </span>
             <p class="timelog-actions">
               <button mat-icon-button (click)="deleteTimeLog(timelog)">

@@ -1,13 +1,14 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormControl, ValidatorFn, RequiredValidator, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from "@angular/core";
+import { FormGroup, FormControl, ValidatorFn, RequiredValidator, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from "@angular/material";
-import { TimeLog } from 'timelog-appcore/lib/models/timelog';
-import { TimelogDataManager } from 'src/app/services/dataManager/timelogDataManager';
+import { TimeLog } from "timelog-appcore/lib/models/timelog";
+import { TimelogDataManager } from "src/app/services/dataManager/timelogDataManager";
+import { I18n } from "@ngx-translate/i18n-polyfill";
 
 @Component({
   selector: 'timelog-create-form',
-  templateUrl: './timelog-create-form.component.html',
-  styleUrls: ['./timelog-create-form.component.css']
+  templateUrl: "./timelog-create-form.component.html",
+  styleUrls: ["./timelog-create-form.component.css"]
 })
 export class TimelogCreateFormComponent implements OnInit {
   timeLogForm: FormGroup;
@@ -15,17 +16,18 @@ export class TimelogCreateFormComponent implements OnInit {
   dateFormControl: FormControl;
 
   constructor(private dialogRef: MatDialogRef<TimelogCreateFormComponent>,
-              @Inject(MAT_DIALOG_DATA) private dialogData: {taskId:string},
+              @Inject(MAT_DIALOG_DATA) private dialogData: {taskId: string},
               private timelogDtMgr: TimelogDataManager,
-              private snackbar: MatSnackBar) {
-    this.durationFromControl = new FormControl('', {
+              private snackbar: MatSnackBar,
+              private i18n: I18n) {
+    this.durationFromControl = new FormControl("", {
       validators: [this.durationFormatValidator(), Validators.required],
-      updateOn: 'blur'
+      updateOn: "blur"
     });
-    this.dateFormControl = new FormControl("",{
+    this.dateFormControl = new FormControl("", {
       validators: Validators.required,
-      updateOn: 'blur'
-    }); 
+      updateOn: "blur"
+    });
     this.timeLogForm = new FormGroup({
       duration: this.durationFromControl,
       date: this.dateFormControl
@@ -45,9 +47,9 @@ export class TimelogCreateFormComponent implements OnInit {
     this.dateFormControl.markAsDirty();
     this.dateFormControl.markAsTouched();
     if (this.timeLogForm.valid) {
-      let formData = this.timeLogForm.value;
-      let timelogData:TimeLog = {
-        id:"",
+      const formData = this.timeLogForm.value;
+      const timelogData: TimeLog = {
+        id: "",
         duration: this.extractDurationInMinutes(formData.duration.toString()),
         taskId: this.dialogData.taskId,
         date: formData.date
@@ -55,17 +57,17 @@ export class TimelogCreateFormComponent implements OnInit {
       
       this.timelogDtMgr.create(timelogData)
         .then(() => {
-          this.snackbar.open("Time log created", "Close", {
+          this.snackbar.open(this.i18n("Time log created"), this.i18n("Close"), {
             duration: 2000,
           });
           this.dialogRef.close();
         }).catch((error) => {
-          this.snackbar.open("Fail to create time log.", "Close", {
+          this.snackbar.open(this.i18n("Fail to create time log."), this.i18n("Close"), {
             duration: 3000,
           });
         });
     } else {
-      this.snackbar.open("Your time log contains some error, please fix them before saving", "Close", {
+      this.snackbar.open(this.i18n("Your time log contains some error, please fix them before saving"), this.i18n("Close"), {
         duration: 3000,
       });
     }
@@ -73,21 +75,21 @@ export class TimelogCreateFormComponent implements OnInit {
 
   durationFormatValidator(): ValidatorFn {
     return function (control) {
-      let formatRegexp = /(\d{1,2}h)?(\d{1,2}m)?/;
-      let value = control.value.toString().replace(/ /g, "");
-      let result = formatRegexp.exec(value);
+      const formatRegexp = /(\d{1,2}h)?(\d{1,2}m)?/;
+      const value = control.value.toString().replace(/ /g, "");
+      const result = formatRegexp.exec(value);
       
       return result === null || result[0] .length === 0 || result[0] !== result.input ? 
-                { 'invalidFormat': { value: control.value } } : null;
+                { "invalidFormat": { value: control.value } } : null;
     }
   }
 
-  extractDurationInMinutes(value:string) {
-    let formatRegexp = /(\d{1,2}h)(\d{1,2}m)/;
-    let result = formatRegexp.exec(value);
+  extractDurationInMinutes(value: string) {
+    const formatRegexp = /(\d{1,2}h)(\d{1,2}m)/;
+    const result = formatRegexp.exec(value);
     if (result && result[0] !== "") {
-      let hours = Number.parseInt((result[1] || "0h").replace("h", ""), 10);
-      let minutes = Number.parseInt((result[2] || "0m").replace("m", ""), 10);
+      const hours = Number.parseInt((result[1] || "0h").replace("h", ""), 10);
+      const minutes = Number.parseInt((result[2] || "0m").replace("m", ""), 10);
       return hours * 60 + minutes;
     }
   }

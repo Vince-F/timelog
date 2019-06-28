@@ -3,12 +3,12 @@
         {{error}}
     </div>
 </div>
-<div *ngIf="isLoading === true">
+<div *ngIf="isLoading === true" i18n>
     Loading...
 </div>
 <div class="content-view" *ngIf="isLoading === false && errors.length === 0">
     <div class="content-view-title mat-elevation-z2">
-        <h1>My tasks</h1>
+        <h1 i18n>My tasks</h1>
     </div>
     <div class="task-list content-view-body" >
         <div class="list-header">

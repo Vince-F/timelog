@@ -1,17 +1,17 @@
-<h1 mat-dialog-title>Create task</h1>
+<h1 mat-dialog-title i18n>Create task</h1>
 <form class="" mat-dialog-content [formGroup]="taskForm" data-section="task-creation-form">
   <mat-form-field class="input-full-width" data-section="task-name-input">
-    <input matInput placeholder="Task name" value="" name="name" formControlName="name">
-    <mat-error *ngIf="nameFormControl.hasError('required')">
+    <input matInput i18n-placeholder placeholder="Task name" value="" name="name" formControlName="name">
+    <mat-error *ngIf="nameFormControl.hasError('required')" i18n>
       Your task name must not be empty.
     </mat-error>
   </mat-form-field>
   <mat-form-field class="input-full-width" data-section="task-description-input">
-    <textarea matInput placeholder="Task description" name="description" formControlName="description">
+    <textarea matInput i18n-placeholder placeholder="Task description" name="description" formControlName="description">
     </textarea>
   </mat-form-field>
 </form>
 <div mat-dialog-actions>
-  <button mat-raised-button (click)="cancel()" data-section="cancel-button">Cancel</button>
-  <button mat-raised-button (click)="create()" cdkFocusInitial color="primary" data-section="create-button">Create</button>
+  <button mat-raised-button (click)="cancel()" data-section="cancel-button" i18n>Cancel</button>
+  <button mat-raised-button (click)="create()" cdkFocusInitial color="primary" data-section="create-button" i18n>Create</button>
 </div>
