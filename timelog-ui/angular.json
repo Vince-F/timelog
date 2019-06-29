@@ -43,9 +43,19 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en"
             },
             "production-fr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
               "aot": true,
               "outputPath": "dist/timelog-ui-fr/",
               "i18nFile": "src/locale/messages.fr.xlf",
@@ -69,7 +79,10 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "outputPath": "dist/timelog-ui-mobile"
+              "outputPath": "dist/timelog-ui-mobile",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en"
             },
             "mobileAppDev": {
               "fileReplacements": [
@@ -105,7 +118,10 @@
               "extractLicenses": false,
               "vendorChunk": true,
               "buildOptimizer": false,
-              "outputPath": "dist/timelog-ui-test"
+              "outputPath": "dist/timelog-ui-test",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en"
             },
             "fr": {
               "aot": true,
