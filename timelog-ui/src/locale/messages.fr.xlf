@@ -1,35 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="bfeb2918dc688c13a53abffacc0ad3f1d12ddbcd" datatype="html">
-        <source>Créer une tâche</source>
+        <source>Create task</source>
+        <target state="final">Créer une tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-create-form/task-create-form.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit><trans-unit id="7548625e27840853ad8904b7549741ea1326fcd0" datatype="html">
-        <source>Nom de la tâche</source>
+        <source>Task name</source>
+        <target state="final">Nom de tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-create-form/task-create-form.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit><trans-unit id="f88c9e18e8828c2df84e73a39472db0de3b154b6" datatype="html">
         <source>
-      Le nom ne doit pas être vide.
-    </source>
+      Your task name must not be empty.
+    </source><target state="final">Le nom ne doit pas être vide.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-create-form/task-create-form.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit><trans-unit id="aeba1ea26bd4fbd162d564717af0d1307e0902b7" datatype="html">
-        <source>Description de la tâche</source>
+        <source>Task description</source>
+        <target state="final">Description de la tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-create-form/task-create-form.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit><trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
-        <source>Annuler</source>
+        <source>Cancel</source>
+        <target state="final">Annuler</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-create-form/task-create-form.component.html</context>
           <context context-type="linenumber">15</context>
@@ -39,7 +43,8 @@
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit><trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
-        <source>Créer</source>
+        <source>Create</source>
+        <target state="final">Créer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-create-form/task-create-form.component.html</context>
           <context context-type="linenumber">16</context>
@@ -49,105 +54,120 @@
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit><trans-unit id="ae2b89e9de6a0d6b24c827adb930c0106c98f446" datatype="html">
-        <source>Créer une entrée de temps</source>
+        <source>Create time log</source>
+        <target state="final">Créer une entrée de temps</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/timelog/timelog-create-form/timelog-create-form.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit><trans-unit id="2f933b826a570836cab04f683970a2d22068458c" datatype="html">
         <source>Date</source>
+        <target state="final">Date</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/timelog/timelog-create-form/timelog-create-form.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit><trans-unit id="f72667b91985f1415af048f94193236bb9f9f932" datatype="html">
         <source>
-      Une date est nécessaire pour saisir son temps.
+      You need a date to when time is logged.
     </source>
+    <target state="final">Une date est nécessaire.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/timelog/timelog-create-form/timelog-create-form.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit><trans-unit id="a02ea1d4e7424ca989929da5e598f379940fdbf2" datatype="html">
-        <source>Durée</source>
+        <source>Duration</source>
+        <target state="final">Durée</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/timelog/timelog-create-form/timelog-create-form.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit><trans-unit id="1cc361607da0291ddaee10ed87be939531a65d78" datatype="html">
         <source>
-      Une durée est nécessaire pour saisir son temps.
+      You need a duration to log time.
     </source>
+    <target state="final">Un durée est nécessaire.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/timelog/timelog-create-form/timelog-create-form.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit><trans-unit id="ae3c6507c5c04b2432c055bee8729969c8b6a3ee" datatype="html">
         <source>
-      Format incorrect. &quot;XXhXXm&quot;, &quot;XXh&quot; ou &quot;XXm&quot; attendu.
-    </source>
+      Incorrect format. Expected "XXhXXm", "XXh" or "XXm".
+    </source><target state="final">Format incorrect. "XXhXXm", "XXh" ou "XXm" sont attendus.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/timelog/timelog-create-form/timelog-create-form.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit><trans-unit id="7eaf8515862c1b5cb470559e364fc88c530e58cc" datatype="html">
         <source>
-    Chargement...
+    Loading...
 </source>
+    <target state="final">Chargement...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-list/task-list.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit><trans-unit id="d8ccf952d3193cc3829a4c0b7a7912916ff08e56" datatype="html">
-        <source>Mes tâches</source>
+        <source>My tasks</source>
+        <target state="final">Mes tâches</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-list/task-list.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit><trans-unit id="61435c6c3b3cca0c204ef9f5369027565d327acb" datatype="html">
-        <source>Tâche</source>
+        <source>Task</source>
+        <target state="final">Tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-detail/task-detail.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit><trans-unit id="0d7f143bdf134cf8a34c7ca43ea3b6afc64644c7" datatype="html">
-        <source>Status :</source>
+        <source>Status:</source>
+        <target state="final">Status :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-detail/task-detail.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit><trans-unit id="1fd069639a54dc3b412f5ccda65ca64cb9052494" datatype="html">
-        <source>Durée totale :</source>
+        <source>Total time spent:</source>
+        <target state="final">Durée totale :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-detail/task-detail.component.html</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit><trans-unit id="4a22c6843133f0b0d7dc0d28f864f2f90c1de7ad" datatype="html">
-        <source>Description :</source>
+        <source>Description:</source>
+        <target state="final">Description :</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-detail/task-detail.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit><trans-unit id="f2005fa461c06dc2e04d8918bbabedf23604b5b7" datatype="html">
-        <source>Activités</source>
+        <source>Activity</source>
+        <target state="final">Activité</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-detail/task-detail.component.html</context>
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit><trans-unit id="48b29674ac5968ecb463d16ae19b5cfb034df50f" datatype="html">
-        <source>le</source>
+        <source>on</source>
+        <target state="final">le</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/tasks/task-detail/task-detail.component.html</context>
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit><trans-unit id="586a5fd72602b5b14ec0c55f84814de47bb21e3a" datatype="html">
-        <source>Tâches</source>
+        <source>Tasks</source>
+        <target state="final">Tâches</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/menus/app-navigation-menu/app-navigation-menu.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit><trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
-        <source>Paramètres</source>
+        <source>Settings</source>
+        <target state="final">Paramètres</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/menus/app-navigation-menu/app-navigation-menu.component.html</context>
           <context context-type="linenumber">14</context>
@@ -158,41 +178,47 @@
         </context-group>
       </trans-unit><trans-unit id="c3dc4cedb224bef268bd776f520842a2b28b7723" datatype="html">
         <source>
-  Chargement...
+  Loading...
 </source>
+      <target state="final">Chargement...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/settings/settings-view/settings-view.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit><trans-unit id="0418506fb56aec634616f66c8ec9c896c48303e4" datatype="html">
-        <source>Empêcher les tâches sans durée d'être &quot;Finie&quot;</source>
+        <source>Prevent task with no time log to be put to "Done"</source>
+        <target state="final">Empêcher les tâches sans durée d'être "Finie"</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/settings/settings-view/settings-view.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit><trans-unit id="12b49237a6ee4bc73a07e63b78bfa3aa81af59bb" datatype="html">
-        <source>Permettre au tâche d'être à nouveau non-accomplie</source>
+        <source>Allow task to be undone</source>
+        <target state="final">Permetre de mettre une tâche à non-finie</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/components/settings/settings-view/settings-view.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0902c70e2dacc7fdf265cd3747fd092716a1d738" datatype="html">
-        <source>Impossible d'obtenir les paramètres.</source>
+        <source>Fail to load settings</source>
+        <target state="final">Impossible de charger les paramètres</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/settings/settings-view/settings-view.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="87fc776dc8a38782a55088e6ad597c9a675b9cbf" datatype="html">
-        <source>Paramètres mis à jour avec succès.</source>
+        <source>Settings successfully updated.</source>
+        <target state="final">Paramètres mis à jour avec succès.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/settings/settings-view/settings-view.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
-        <source>Fermer</source>
+        <source>Close</source>
+        <target state="final">Fermer</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/settings/settings-view/settings-view.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -255,49 +281,56 @@
         </context-group>
       </trans-unit>
       <trans-unit id="0194039629e65e8da26a9a7d4710a57eed8075b7" datatype="html">
-        <source>Impossible de mettre à jour les paramètres.</source>
+        <source>Fail to update settings.</source>
+        <target state="final">Impossible de mettre à jour les paramètres.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/settings/settings-view/settings-view.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4850b9d2f411ae259da767a9e5676ec99b4a8f8f" datatype="html">
-        <source>Entrée de temps supprimée avec succès</source>
+        <source>Timelog successfully deleted</source>
+        <target state="final">L'entrée de temps a été supprimée avec succès</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-detail/task-detail.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ee155d45ff5629198f85766a82dbe8628023fd72" datatype="html">
-        <source>Impossible de supprimer l'entrée de temps</source>
+        <source>Fail to delete timelog</source>
+        <target state="final">Impossible de supprimer l'entée de temps</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-detail/task-detail.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f3b18fc608374f381f0b5cfcd7fac80f847d0772" datatype="html">
-        <source>Impossible de charger la tâche</source>
+        <source>Fail to load task</source>
+        <target state="final">Impossible d'obtenir la tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-detail/task-detail.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ee9568250f2f2b16db81324de2c5855d2ccaa865" datatype="html">
-        <source>Impossible d'obtenir les entrées de temps de la tâche</source>
+        <source>Fail to load task's time logs</source>
+        <target state="final">Impossible d'obtenir les entrées de temps liées à la tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-detail/task-detail.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1f945399eb3f86e032eee594ef07a4135c67fe65" datatype="html">
-        <source>Impossible d'obtenir les tâches.</source>
+        <source>Fail to load tasks.</source>
+        <target state="final">Impossible de charger les tâches.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5b36ad3eb1177d4bd3cbac8fa5f4bf28420746e4" datatype="html">
-        <source>Tâche mise à jour</source>
+        <source>Task updated</source>
+        <target state="final">Tâche mise à jour</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -308,7 +341,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="79b0dfbfb18a8c49012a45289f87de446e92c0f3" datatype="html">
-        <source>Impossible de mettre à jour la tâche</source>
+        <source>Fail to update task</source>
+        <target state="final">Impossible de mettre à jour la tâche</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -319,49 +353,56 @@
         </context-group>
       </trans-unit>
       <trans-unit id="e066b44f192ec5170c698e162823a7e268c656da" datatype="html">
-        <source>La tâche ne peut être fini car aucun temps n'a été saisi.</source>
+        <source>Your task cannot be put to done because you don't any time logged in it.</source>
+        <target state="final">Votre tâche ne peut être finie car aucun temps n'été saisi pour celle ci.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b239e8420640ae796613d94806b1a6d67206f31d" datatype="html">
-        <source>Impossible d'obtenir les entrées de temps pour cette tâche.</source>
+        <source>Fail to retrieve time logs for this task.</source>
+        <target state="final">Impossible d'obtenir les entrées de temps pour cette tâche.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e2d390df212e0ce9730992db14b255c8889bede6" datatype="html">
-        <source>Impossible de mettre cette tâche à "non-accomplie".</source>
+        <source>You cannot put back task to not done.</source>
+        <target state="final">Impossible de mettre cette tâche à non-finie.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6cd8b2a8e1e50883fe149c956c2770643a9c9a40" datatype="html">
-        <source>Impossible d'obtenir les paramètres utilisteurs.</source>
+        <source>Fail to check user settings.</source>
+        <target state="final">Impossible d'obtenir les paramètres utilisteurs.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tasks/task-list/task-list.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5245f417b363a84f766cd36f9d913442d24515d7" datatype="html">
-        <source>Entrée de temps créée</source>
+        <source>Time log created</source>
+        <target state="final">Entrée de temps créée</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/timelog/timelog-create-form/timelog-create-form.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4cf540fc81bc020970997b9ed591fa8f8abd4ee8" datatype="html">
-        <source>Impossible de créer l'entrée de temps.</source>
+        <source>Fail to create time log.</source>
+        <target state="final">Impossible de créer l'entrée de temps.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/timelog/timelog-create-form/timelog-create-form.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e85e431b08e80b7df09ec23f8ca6957e720abda7" datatype="html">
-        <source>Votre entrée contient des erreurs, veuillez les corriger.</source>
+        <source>Your time log contains some error, please fix them before saving</source>
+        <target state="final">Votre saisie contient des erreurs, impossible de sauvegarder</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/timelog/timelog-create-form/timelog-create-form.component.ts</context>
           <context context-type="linenumber">1</context>

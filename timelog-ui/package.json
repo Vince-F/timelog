@@ -18,7 +18,7 @@
     "run-tests": "node testLauncher.js",
     "extract-i18n": "ng xi18n timelog-ui --i18n-format xlf --output-path i18n --i18n-locale en && ngx-extractor -i src/**/*.ts -f xlf -o src/locale/messages.xlf && ng run timelog-ui:xliffmerge",
     "merge-i18n": "xliffmerge -p xliffmerge.json",
-    "start-fr": "ng serve --configuration=fr"
+    "start-fr": "ng serve -c test-fr"
   },
   "private": true,
   "dependencies": {

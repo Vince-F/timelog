@@ -24,7 +24,7 @@ import { SettingsManager } from "./services/dataManager/settingsManager";
 import { ErrorViewComponent } from "./components/layout/error-view/error-view.component";
 
 declare const require; // Use the require method provided by webpack
-const translations = require(`raw-loader!../locale/messages.en.xlf`);
+const translations = require(`raw-loader!../locale/messages.fr.xlf`);
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ const translations = require(`raw-loader!../locale/messages.en.xlf`);
   providers: [
     {provide: TRANSLATIONS, useValue: translations},
     {provide: TRANSLATIONS_FORMAT, useValue: 'xlf'},
-    {provide: LOCALE_ID, useValue: "en"}
+    {provide: LOCALE_ID, useValue: "fr"}
     , I18n,
     TaskDataManager, TimelogDataManager, SettingsManager],
   bootstrap: [AppComponent]
